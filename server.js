@@ -7,7 +7,7 @@ let lastMessage = 'Leave a message for the next person who texts me!';
 
 app.get('/', (req, res) => {
   const twiml = new MessagingResponse();
-  twiml.message(lastMessage);
+  twiml.message(lastMessage || "You're amazing!");
 
   lastMessage = req.query.Body;
 
