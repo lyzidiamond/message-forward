@@ -7,9 +7,13 @@ let lastMessage = 'Leave a message for the next person who texts me!';
 
 app.get('/', (req, res) => {
   const twiml = new MessagingResponse();
-  twiml.message(lastMessage || "You're amazing!");
 
-  lastMessage = req.query.Body;
+  if (req.query.Body === '?') {
+    twiml.message("Hi! Send me a message and I'll send it to the next person who texts me. After you give me a message, I'll send you the last message I got. Make sure to leave something nice!")
+  } else {
+    twiml.message(lastMessage || "You're amazing!");
+    lastMessage = req.query.Body;
+  }
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
