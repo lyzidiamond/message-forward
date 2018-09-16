@@ -5,7 +5,7 @@ const app = express();
 
 let lastMessage = 'Leave a message for the next person who texts me!';
 
-app.get('/sms', (req, res) => {
+app.get('/', (req, res) => {
   const twiml = new MessagingResponse();
   twiml.message(lastMessage);
 
@@ -15,6 +15,6 @@ app.get('/sms', (req, res) => {
   res.end(twiml.toString());
 });
 
-app.listen(1337, () => {
-  console.log('Express server listening on port 1337');
+app.listen(process.env.PORT || 5000, () => {
+  console.log('Express server listening on port 5000');
 });
