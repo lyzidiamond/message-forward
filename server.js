@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   const twiml = new MessagingResponse();
 
   if (req.query.Body === '?') {
-    twiml.message("Hi! Send me a message and I'll send it to the next person who texts me. After you give me a message, I'll send you the last message I got. Make sure to leave something nice!")
+    twiml.message("Hi! ✨\n\nSend me a message and I'll store it for the next person. Then I'll send you the last message I have stored. 💁")
   } else {
     twiml.message(lastMessage || "You're amazing!");
     lastMessage = req.query.Body;
