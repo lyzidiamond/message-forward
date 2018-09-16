@@ -1,0 +1,21 @@
+{
+  "name": "message-forward",
+  "version": "0.0.1",
+  "description": "Leave a message, get a message",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lyzi Diamond",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "twilio": "^3.19.2"
+  },
+  "devDependencies": {
+    "dotenv": "^6.0.0"
+  },
+  "engines": {
+    "node": "8.10.1"
+  }
+}
