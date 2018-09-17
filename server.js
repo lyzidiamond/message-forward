@@ -1,6 +1,5 @@
 const express = require('express');
-const twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-const MessagingResponse = twilio.twiml.MessagingResponse;
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();
 
